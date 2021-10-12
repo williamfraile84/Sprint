@@ -1,0 +1,81 @@
+{% extends 'base/base.html' %}
+{% block title %} {{title}} {% endblock title %}
+{% block content %}
+{% from '_macro.html' import render_field %}
+<div class="col position-relative bg-dark">
+    <!-- style="background: url('https://www.xtrafondos.com/descargar.php?id=3963&resolucion=2560x1440') center; background-size: contain;" -->
+    <div class="col-10 position-absolute top-50 start-0  m-5">
+        <h2 class="text-white ">Bienvenido a</h2>
+        <h2 class="text-white ">Social Melipona Beecheii</h2>
+        <hr class="bg-white" size="5">
+        <h4 class="text-white ">Una red social de imagenes</h4>
+    </div>
+</div>
+
+
+
+<div class="col-4 d-flex justify-content-center position-relative">
+
+    <button type="button" class="btn position-absolute top-0 start-0 ms-4 mt-3 "><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+      </svg><a
+        href="{{ url_for('login') }}" class="text-decoration-none fs-5">Iniciar Sesión</a> </button>
+
+    <form action="" class="col-11 p-4 mt-4" method="post" novalidate>
+        <!------------------ Inicio------------------------->
+        <div class="mx-auto d-block text-center">
+            <img src="{{ url_for('static', filename='Images/logo.png') }}" alt="logo" width="80px">
+            <p class="fw-bolder fs-5 fst-italic">Social Melipona Beecheii</p>
+        </div>
+        {{formReg.hidden_tag()}}
+
+        <div class="control-group">
+            <div class="row form-group">
+                <div class="col">{{render_field(formReg.nombre, class_='form-control border-0 border-bottom border-2 border-dark bg-transparent')}}</div>
+                <div class="col">{{render_field(formReg.apellido, class_='form-control border-0 border-bottom border-2 border-dark bg-transparent')}}</div>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="row form-group">
+                <div class="col">{{render_field(formReg.usuario, class_='form-control border-0 border-bottom border-2 border-dark bg-transparent')}}</div>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="row form-group">
+                <div class="col">{{render_field(formReg.email, class_='form-control border-0 border-bottom border-2 border-dark bg-transparent')}}</div>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="row form-group">
+                <div class="col">{{render_field(formReg.contraseña, class_='form-control border-0 border-bottom border-2 border-dark bg-transparent')}}</div>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="row form-group">
+                <label class='form-label mt-3 mb-0'>Fecha de nacimiento</label>
+                <div class="col">{{render_field(formReg.dia, class_='text-center form-select form-control border-0 border-bottom border-2 border-dark bg-transparent')}}</div>
+                <div class="col">{{render_field(formReg.mes, class_='text-center form-select form-control border-0 border-bottom border-2 border-dark bg-transparent')}}</div>
+                <div class="col">{{render_field(formReg.año, class_='text-center form-select form-control border-0 border-bottom border-2 border-dark bg-transparent')}}</div>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="row form-group">
+                <label class='form-check-label mt-3 mb-3'>Sexo</label>
+                <div class="col">{{render_field(formReg.sexo, class='list-unstyled ')}}</div>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="row form-group">
+                <p class="text-center">Al hacer clic en "Crear Cuenta", aceptas <br> nuestras <a href="#">Condiciones de
+                        uso</a> y <br><a href="#">la Politica de privacidad</a></p>
+            </div>
+        </div>
+        <div class="success"></div>
+        <div class="row ">
+            <div class="text-center form-group col-xs-12 ">
+                {{render_field(formReg.register, class='btn btn-primary')}}
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock content %}

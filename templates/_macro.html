@@ -1,0 +1,38 @@
+{% macro render_field(field) %}
+
+{% if  field.type == 'SubmitField' %}
+    <td> {{field(**kwargs)|safe}} </td>
+ 
+{% else %}
+
+    {% if field.type == 'BooleanField' %}
+
+    <td> {{field(**kwargs)|safe}}{{field.label(class_='form-check-label ms-2')}}</td>
+    {% else %}
+        {% if field.type == 'RadioField' %}
+        <div class="row">
+            {% for ie in field %}
+            <div class="col">
+                <td>  {{ie(class='form-check-input mb-3')}} {{ie.label(class='form-check-label ms-2')}}</td>
+            </div>
+                
+            {% endfor %}
+        </div>
+
+        {%else%}
+            <td> {{field.label(class_='form-label fw-bold')}} </td>
+            <dd> {{field(**kwargs)|safe}} </dd>
+    {% endif %}
+        
+    {% endif %}
+{% endif %}
+
+{% if field.errors %}
+        <ul>
+            {% for error in field.errors %}
+                <li class="text-danger"> {{error}} </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+{% endmacro %}
