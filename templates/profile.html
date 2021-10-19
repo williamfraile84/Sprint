@@ -1,77 +1,27 @@
 {% extends 'base/base.html' %}
 {% block title %} {{title}} {% endblock title %}
 {% block content %}
-{% from '_macro.html' import render_tabs,render_tabs_A, render_tabs_Inf %}
 
 
 
 
 
-<div class="container ">
-  <div class="row justify-content-center position-relative">
-    <div class="col-8 m-0 p-0"
-      style="background: url('../static/images/fondoPe.jpg') no-repeat center; height: 60vh; border-bottom-left-radius: 2vh; border-bottom-right-radius: 2vh; ">
-    </div>
-    <div class="col-2 text-center p-2 rounded-circle position-absolute start-50 translate-middle bg-info"
-      style="background: url('../static/images/perfil.png') no-repeat center; background-size: contain; width: 168px; height: 168px; top: 85%; border: 5px solid rgb(71, 67, 67);">
-    </div>
-  </div>
-  <div class="row justify-content-center position-relative mt-4">
-    <div class="col text-center p-2">
-      <h2>Nombre Usuario</h2>
-    </div>
-  </div>
-  <div class="row justify-content-center position-relative">
-    <div class="col-8 border-0 border-primary border-top border-2">
-      <ul class="nav nav-pills my-2" id="pills-tab" role="tablist">
-        <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Publicaciones</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Amigos</button>
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Información</button>
-        </li>
-      </ul>
-      <div class="row tab-content justify-content-center position-relative mb-2" id="pills-tabContent" style="background: rgba(0, 0, 0, 0.164);">
-        <div class="col tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"><div class="row row-cols-2 justify-content-around pb-3">{{render_tabs(publicacion)}}</div></div>
-        
-        <div class="col tab-pane fade mb-5" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" ><div class="row row-cols-2 justify-content-around"> {{render_tabs_A(amigo)}} </div></div>
-
-        <div class="col tab-pane fade mb-5" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-          <div class="row ">
-            <div class="col">
-              <div class="d-flex align-items-start" >
-                <div class="nav flex-column nav-pills m-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                  <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Información general </button>
-                  <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Información de contacto </button>
-                  <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Empleo y formación </button>
-                  <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Lugares de residencia</button>
-                </div>
-                <div class="tab-content" id="v-pills-tabContent">
-                  <div class="tab-pane fade show active p-4" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                    <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda doloremque, repellendus cupiditate, praesentium suscipit eveniet voluptatibus a asperiores animi culpa nisi maiores quia sunt rem autem veritatis provident omnis tempora?</h6>
-                  </div>
-                  <div class="tab-pane fade p-4" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                    <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. A id earum sed modi velit, explicabo eius consequatur tempore, eos obcaecati amet consectetur eveniet beatae. Sequi laudantium hic labore amet autem!</h5>
-                  </div>
-                  <div class="tab-pane fade p-4" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum, totam. Reprehenderit architecto, libero tempora molestias provident ratione, ad dolores autem laudantium, velit delectus rem! Molestiae excepturi sint dicta laborum illo.</p>
-                  </div>
-                  <div class="tab-pane fade p-4" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-                    <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nihil explicabo laudantium culpa necessitatibus vitae! Excepturi placeat, vero iste, veritatis voluptas, perferendis nostrum repellendus facere est voluptatibus amet facilis autem!/h6>
-                  </div>
-                </div>
-              </div>
-            </div> 
-           </div>
+    <div class="container ">
+        <div class="row justify-content-center position-relative">
+            <div class="col-10 bg-danger">
+              One of two columns
+              <br><br><br><br><br><br><br><br>
+            </div>
           </div>
-      </div>
+          <div class="row justify-content-center position-relative">
+            <div class="col-2 text-center p-5 rounded-circle position-absolute top-100 start-50 translate-middle bg-info">
+                One of two columns
+                <br></br><br><br>
+                <div class="col-10 text-center bg-warning position-absolute top-100 start-50 translate-middle">
+                    One of two columns
+                    
+                  </div>
+              </div>
+          </div>
     </div>
-  </div>
-</div>
-
 {% endblock content %}
-<!-- 1400 * 901 -->
-
