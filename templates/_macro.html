@@ -1,38 +1,86 @@
 {% macro render_field(field) %}
 
 {% if  field.type == 'SubmitField' %}
-    <td> {{field(**kwargs)|safe}} </td>
- 
-{% else %}
+<td> {{field(**kwargs)|safe}} </td>
 
-    {% if field.type == 'BooleanField' %}
+{% endif %}
 
-    <td> {{field(**kwargs)|safe}}{{field.label(class_='form-check-label ms-2')}}</td>
-    {% else %}
-        {% if field.type == 'RadioField' %}
-        <div class="row">
-            {% for ie in field %}
-            <div class="col">
-                <td>  {{ie(class='form-check-input mb-3')}} {{ie.label(class='form-check-label ms-2')}}</td>
-            </div>
-                
-            {% endfor %}
-        </div>
+{% if field.type == 'BooleanField' %}
 
-        {%else%}
-            <td> {{field.label(class_='form-label fw-bold')}} </td>
-            <dd> {{field(**kwargs)|safe}} </dd>
-    {% endif %}
-        
-    {% endif %}
+<td> {{field(**kwargs)|safe}}{{field.label(class_='form-check-label ms-2')}}</td>
+{% endif %}
+
+{% if field.type == 'RadioField' %}
+<div class="row">
+  {% for ie in field %}
+  <div class="col">
+    <td> {{ie(class='form-check-input mb-3')}} {{ie.label(class='form-check-label ms-2')}}</td>
+  </div>
+
+  {% endfor %}
+</div>
+{% endif %}
+
+{% if field.type == 'StringField' or field.type == 'PasswordField' or field.type == 'SelectField' or field.type == 'EmailField' %}
+<td> {{field.label(class_='form-label fw-bold mt-2')}} </td>
+<dd> {{field(**kwargs)|safe}} </dd>
 {% endif %}
 
 {% if field.errors %}
-        <ul>
-            {% for error in field.errors %}
-                <li class="text-danger"> {{error}} </li>
-            {% endfor %}
-        </ul>
-    {% endif %}
+<ul>
+  {% for error in field.errors %}
+  <li class="text-danger"> {{error}} </li>
+  {% endfor %}
+</ul>
+{% endif %}
 
+{% endmacro %}
+
+{% macro render_tabs(publicacion) %}
+
+  {%for p in publicacion %}
+  {% set img = p['imagen'] %}
+
+  <div class="col-5 bg-light mt-3 rounded-3">
+      <div class="row m-3">
+        <div class="col-2">
+          <img src="{{p['imgperfil']}}" alt="" style="width: 45px;">
+        </div>
+        <div class="col">
+          <h5> {{p['usuario']}} </h5>
+          
+        </div>
+      </div>
+      <div class="row m-2">
+        <div class="col">
+          <p> {{p['Texto']}} </p>
+        </div>
+      </div>
+      <div class="row justify-content-center mb-3" >
+        <div class="col bg-dark border border-1 border-light py-4" > 
+          <div style="background: url('{{img}}') no-repeat center; background-size: contain; height: 35vh; ">
+          </div>
+        </div>
+      </div>
+</div>
+{% endfor %}
+
+{% endmacro %}
+
+{% macro render_tabs_A(field) %}
+  {% for a in field %}
+  {% set img = a['imgperfil'] %}
+  <div class="col-5 ">
+    <div class="row m-2 justify-content-between ">
+      <div class="col-4 bg-black position-relative"  style="background: url('{{img}}') no-repeat center; background-size: contain;">
+        <!-- <img src=" {{img}} " class="position-absolute top-50 start-50 translate-middle" alt="Imagen Perfil"  width="112vh" > -->
+      </div>
+      <div class="col-8 bg-light p-2"> 
+      <h6>{{a['usuario']}}</h6>
+      <p> {{a['ciudad']}} </p>
+      </div>
+    </div>
+  </div>
+    
+  {% endfor %}
 {% endmacro %}

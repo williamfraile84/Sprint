@@ -20,7 +20,7 @@
             <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
           </svg></button>
 
-    <form action="" class="col-9 p-4 mt-4" method="post" novalidate>
+    <form action="" class="col-9 p-4 mt-3" method="post" novalidate>
         <!------------------ Inicio------------------------->
         <div class="mx-auto d-block text-center">
             <img src="{{ url_for('static', filename='Images/logo.png') }}" alt="logo" width="80px">
@@ -30,17 +30,17 @@
         <br>
         <div class="control-group">
             <div class="form-group">
-                <p>{{render_field(formLog.usuario, class_='form-control border-0 border-bottom border-2 border-dark bg-transparent')}}</p>
+                {{render_field(formLog.usuario, class_='form-control border-0 border-bottom border-2 border-dark bg-transparent')}}
             </div>
         </div>
         <div class="control-group">
             <div class="form-group">
-                <p>{{render_field(formLog.contraseña, class_='form-control border-0 border-bottom border-2 border-dark bg-transparent')}}</p>
+                {{render_field(formLog.contraseña, class_='form-control border-0 border-bottom border-2 border-dark bg-transparent')}}
             </div>
         </div>
         <div class="control-group">
             <div class="form-group"><br>
-                <p>{{render_field(formLog.recordar, class_='form-check-input')}}</p>
+                {{render_field(formLog.recordar, class_='form-check-input')}}
             </div>
         </div>
         <div class="success"></div>

@@ -35,3 +35,17 @@ class registerForm(FlaskForm):
     sexo = RadioField('', choices=[('1','Hombre'),('2','Mujer'),('3','Otro')])
     register = SubmitField('Registrarse')
    
+
+# genero = SelectField('Genero', choices=[(1, 'Acción'), (2, 'Aventuras'), (3, 'Ciencia Ficción'), (4, 'Comedia'), (5, 'Documental'), (6, 'Drama'), (7, 'Fantasía'), (8, 'Musical'), (9, 'Suspenso'), (10, 'Terror')], validators=[
+#         DataRequired(message='Campo Requerido')])
+# estreno = DateField('Estreno', validators=[
+#         DataRequired(message='Campo Requerido')])
+# <div class="col-4 form-floating mb-3">
+#                         {{ form.genero(class_='form-control',id='floatingSelect',placeholder='#')}}
+#                         {{ form.genero.label(for='floatingSelect') }}
+#                     </div>
+# <div class="col-4 form-floating mb-3">
+#                         {{ form.estreno(class_='datepicker
+#                         form-control',id='floatingInput',placeholder='#')}}{{form.hidden_tag()}}
+#                         {{ form.estreno.label(for='floatingInput') }}
+#                     </div>
