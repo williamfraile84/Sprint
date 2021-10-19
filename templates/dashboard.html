@@ -1,11 +1,21 @@
 {% extends 'base/base.html' %}
+{% block title %} {{title}} {% endblock title %}
 {% block content %}
-<div class="container">
+<div class="container" style="height: 92vh;">
     <div class="row">
 
-        <div class="col text-center">
+        <div class="col text-center pt-5">
             <h1>Bienvenido</h1>
             <h1>DashBoard</h1>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col text-center pt-5">
+            <button type="button" class="btn btn-dark me-4 mt-3 p-3"><a href="{{ url_for('profile') }}"
+                    class="text-decoration-none fs-4">Perfil de usuario</a> <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 20">
+                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                      </svg></button>
         </div>
     </div>
 </div>
