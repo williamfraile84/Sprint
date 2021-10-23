@@ -6,19 +6,39 @@
 
 
 
+<script>
+  function subirImagen( d ) {
+    location.href = Flask.url_for( 'upload');
+  }
+</script>
 
 <div class="container ">
   <div class="row justify-content-center position-relative">
     <div class="col-8 m-0 p-0"
-      style="background: url('../static/images/fondoPe.jpg') no-repeat center; height: 60vh; border-bottom-left-radius: 2vh; border-bottom-right-radius: 2vh; ">
+      style="background: url('{{perfil[0][4]}}{{perfil[0][5]}}') no-repeat center; background-color: darkslategray; height: 60vh; border-bottom-left-radius: 2vh; border-bottom-right-radius: 2vh; ">
+      
+      <form method="POST" action="upload" enctype="multipart/form-data">
+        <label for="imageUpload"  class="col-sm-2 btn btn-primary btn-block btn-outlined position-absolute bottom-0" style="right: 250px; width: 150px;">Cambiar Portada</label>
+      <p><input type="file" onchange="form.submit()" name="file" id="imageUpload" accept="image/*" style="display: none"></p>
+      <!-- <p><input type="submit" value="Submit"></p> -->
+    </form>
     </div>
-    <div class="col-2 text-center p-2 rounded-circle position-absolute start-50 translate-middle bg-info"
-      style="background: url('../static/images/perfil.png') no-repeat center; background-size: contain; width: 168px; height: 168px; top: 85%; border: 5px solid rgb(71, 67, 67);">
+
+    <div class="col-2 text-center p-2 rounded-circle position-absolute start-50 translate-middle bg-dark"
+      style="background: url('{{perfil[0][2]}}{{perfil[0][3]}}') no-repeat center; background-size: contain; width: 168px; height: 168px; top: 85%; border: 5px solid rgb(71, 67, 67);">
+
+      <form method="POST" action="uploadP" enctype="multipart/form-data">
+      <label for="imageUploade" class="col-sm-2 rounded-circle btn btn-primary btn-block btn-outlined position-absolute bottom-0  translate-middle-x justify-content-center" style=" width: 50px; height: 45px; left: 140px;"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-camera-fill" viewBox="0 0 16 16">
+        <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+        <path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z"/>
+      </svg></label>
+      <p><input type="file" onchange="form.submit()" name="fileP" id="imageUploade" accept="image/*" style="display: none"></p>
+    </form>
     </div>
   </div>
   <div class="row justify-content-center position-relative mt-4">
     <div class="col text-center p-2">
-      <h2>Nombre Usuario</h2>
+      <h2>{{perfil[0][1]}}</h2>
     </div>
   </div>
   <div class="row justify-content-center position-relative">
